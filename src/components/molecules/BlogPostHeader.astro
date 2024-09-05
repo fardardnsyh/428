@@ -1,0 +1,33 @@
+---
+import FormattedDate from '../atoms/FormattedDate.astro'
+
+const { title, pubDate, updatedDate } = Astro.props
+---
+
+<div class="blogPostHeader -highlight">
+	<div class="content">
+		<h1>{title}</h1>
+		{
+			updatedDate ? (
+				<p>
+					<small>
+						Last updated on <FormattedDate date={updatedDate} />
+					</small>
+				</p>
+			) : (
+				<p>
+					<small>
+						Published on <FormattedDate date={pubDate} />
+					</small>
+				</p>
+			)
+		}
+	</div>
+</div>
+
+<style>
+	.blogPostHeader {
+		padding-block: var(--space-xl-2xl);
+		padding-inline: var(--space-s);
+	}
+</style>

@@ -1,0 +1,153 @@
+/* setup */
+@import './setup/reset.css';
+@import './setup/variables.css';
+
+/* other */
+@import './theme.css';
+@import './fonts.css';
+@import './layout.css';
+@import './prism-code-style.css';
+
+@view-transition {
+	navigation: auto;
+}
+
+body {
+	font-family: 'LINE Seed', Arial, Helvetica, sans-serif;
+	font-size: var(--step-0);
+	line-height: 1.4;
+
+	background-color: var(--background-color);
+	color: var(--text-color);
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+	font-weight: 700;
+	line-height: 1.2;
+	text-wrap: balance;
+}
+
+h1,
+.h1 {
+	font-size: var(--step-5);
+}
+
+h2,
+.h2 {
+	font-size: var(--step-4);
+}
+
+h3,
+.h3 {
+	font-size: var(--step-3);
+}
+
+h4,
+.h4 {
+	font-size: var(--step-2);
+}
+
+h5,
+.h5 {
+	font-size: var(--step-1);
+}
+
+small {
+	font-size: var(--step--1);
+}
+
+* + h1,
+* + h2,
+* + h3,
+* + h4,
+* + h5,
+* + h6 {
+	margin-block-start: 1.5em;
+}
+
+.content * + p,
+* + ul,
+* + ol,
+* + blockquote,
+* + pre,
+* + table,
+* + .posts,
+.posts + * {
+	margin-block-start: 1em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+strong,
+b,
+blockquote {
+	color: var(--headline-color);
+}
+
+blockquote {
+	font-style: italic;
+
+	border-left: 0.375em solid var(--highlight-color);
+	padding-inline: var(--space-s);
+	padding-block: var(--space-2xs);
+}
+
+:not(pre) > code {
+	background: var(--code-background-color);
+	color: var(--code-text-color);
+	border-radius: 0.125em;
+}
+
+/* Highlight elements */
+.-highlight {
+	color: var(--headline-color);
+	background-color: var(--highlight-color);
+	border-radius: 0.5rem;
+	box-shadow:
+		rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+		rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+		rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+/* Links */
+a[href]:not(.teaser_link) {
+	color: var(--link-text-color);
+	border-radius: 0.125em;
+	outline: 0.1em solid transparent;
+	text-decoration: none;
+	padding-inline: 0.3em;
+
+	background-image: linear-gradient(var(--link-background-color), var(--link-background-color));
+	background-repeat: no-repeat;
+	background-size: 100% 0.25rem;
+	background-position: 0 100%;
+	transition:
+		background-size 0.2s ease-out,
+		outline-color 0.2s ease-out;
+}
+
+a[href]:not(.teaser_link):hover,
+a[href]:not(.teaser_link).active {
+	background-size: 100% 100%;
+	outline-color: var(--link-text-color);
+}
+
+a[href]:not(.teaser_link):focus {
+	outline-color: var(--link-text-color);
+}

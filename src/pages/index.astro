@@ -1,0 +1,25 @@
+---
+import { SITE_DESCRIPTION } from '../consts'
+
+import LatestPosts from '../components/organisms/LatestPosts.astro'
+import Page from '../components/templates/Page.astro'
+---
+
+<Page title="Home" description={SITE_DESCRIPTION}>
+	<main>
+		<div class="container">
+			<div class="content -left">
+				<h1>Christopher Voigt</h1>
+				<p>
+					I'm a front-end developer and UX designer. And this is where I write about the topics that I work on or the
+					tools that I work with.
+				</p>
+			</div>
+		</div>
+
+		<div class="container">
+			<h2>Latest posts</h2>
+			<LatestPosts />
+		</div>
+	</main>
+</Page>

@@ -1,0 +1,33 @@
+---
+import fs from 'fs'
+import { getCollection } from 'astro:content'
+
+import BlogPost from '../../components/templates/BlogPost.astro'
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog')
+
+	return posts.map((post) => {
+		const { slug } = post
+		const filename = `src/data/webmentions/${slug}.json`
+
+		let webmentions = []
+		if (fs.existsSync(filename)) {
+			webmentions = JSON.parse(fs.readFileSync(filename, 'utf8'))
+		}
+
+		return {
+			params: { slug },
+			props: { ...post, webmentions },
+		}
+	})
+}
+
+const { props } = Astro
+const { webmentions } = props
+const { Content } = await props.render()
+---
+
+<BlogPost {...props.data} webmentions={webmentions}>
+	<Content />
+</BlogPost>

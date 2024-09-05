@@ -1,0 +1,75 @@
+---
+import FormattedDate from '../atoms/FormattedDate.astro'
+
+const { slug, data } = Astro.props
+---
+
+<article class="teaser -highlight">
+	<div class="teaser_content">
+		<a href={`/blog/${slug}/`} class="teaser_link">
+			<h3>{data.title}</h3>
+		</a>
+
+		<p>
+			<small>
+				<FormattedDate date={data.pubDate} />
+			</small>
+		</p>
+	</div>
+</article>
+
+<style>
+	.teaser {
+		container: teaser / inline-size;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+
+		position: relative;
+		outline: 0.25em solid transparent;
+		transition: outline-color 0.2s ease-out;
+
+		padding-inline: var(--space-s);
+		padding-block: var(--space-s);
+	}
+
+	.teaser_content {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+
+		@container (min-width: 14rem) {
+			aspect-ratio: 4 / 3;
+		}
+
+		@container (min-width: 24rem) {
+			aspect-ratio: 4 / 2;
+		}
+
+		@container (min-width: 34rem) {
+			aspect-ratio: 4 / 1;
+		}
+	}
+
+	.teaser:hover,
+	.teaser:focus-within {
+		outline-color: var(--link-text-color);
+	}
+
+	.teaser_link {
+		color: var(--link-text-color);
+		text-decoration: none;
+	}
+
+	.teaser_link:focus {
+		outline: 0;
+	}
+
+	.teaser_link::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		cursor: pointer;
+	}
+</style>

@@ -1,0 +1,67 @@
+---
+import FormattedDate from '../atoms/FormattedDate.astro'
+
+const { webmentions } = Astro.props
+---
+
+<p class="h4">Webmentions</p>
+
+<ul>
+	{
+		webmentions.map((webmention) => (
+			<li>
+				{webmention.author.photo ? (
+					<img alt="" height="50" src={webmention.author.photo} width="50" loading="lazy" />
+				) : null}
+
+				<p>
+					<a href={webmention.author.url} rel="author">
+						{webmention.author.name}
+					</a>
+
+					<br />
+
+					{webmention['wm-property'] === 'like-of' ? (
+						<>
+							liked on
+							<FormattedDate date={new Date(webmention['wm-received'])} />
+						</>
+					) : null}
+
+					{webmention['wm-property'] === 'repost-of' ? (
+						<>
+							reposted on
+							<FormattedDate date={new Date(webmention['wm-received'])} />
+						</>
+					) : null}
+				</p>
+			</li>
+		))
+	}
+</ul>
+
+<style>
+	ul {
+		list-style: none;
+		padding: 0;
+
+		display: flex;
+		column-gap: 2rem;
+		row-gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	li {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	p {
+		margin: 0;
+	}
+
+	img {
+		border-radius: 50%;
+	}
+</style>

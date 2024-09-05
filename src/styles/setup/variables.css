@@ -1,0 +1,107 @@
+:root {
+	/* font sizes */
+	/* @link https://utopia.fyi/type/calculator?c=316,16,1.125,1110,20,1.25,5,2,&s=0.75%7C0.5%7C0.25,1.5%7C2%7C3%7C4%7C6,s-l&g=s,m,xl,12 */
+	--step--2: clamp(0.7901rem, 0.7871rem + 0.0153vw, 0.8rem);
+	--step--1: clamp(0.8889rem, 0.8549rem + 0.1719vw, 1rem);
+	--step-0: clamp(1rem, 0.9236rem + 0.3868vw, 1.25rem);
+	--step-1: clamp(1.125rem, 0.9913rem + 0.677vw, 1.5625rem);
+	--step-2: clamp(1.2656rem, 1.0555rem + 1.0638vw, 1.9531rem);
+	--step-3: clamp(1.4238rem, 1.1128rem + 1.5746vw, 2.4414rem);
+	--step-4: clamp(1.6018rem, 1.1587rem + 2.2436vw, 3.0518rem);
+	--step-5: clamp(1.802rem, 1.1869rem + 3.1144vw, 3.8147rem);
+
+	/* spaces */
+	/* @link https://utopia.fyi/space/calculator?c=316,16,1.125,1110,20,1.25,5,2,&s=0.75%7C0.5%7C0.25,1.5%7C2%7C3%7C4%7C6,s-l&g=s,m,xl,12 */
+	--space-3xs: clamp(0.25rem, 0.2309rem + 0.0967vw, 0.3125rem);
+	--space-2xs: clamp(0.5rem, 0.4618rem + 0.1934vw, 0.625rem);
+	--space-xs: clamp(0.75rem, 0.6927rem + 0.2901vw, 0.9375rem);
+	--space-s: clamp(1rem, 0.9236rem + 0.3868vw, 1.25rem);
+	--space-m: clamp(1.5rem, 1.3854rem + 0.5803vw, 1.875rem);
+	--space-l: clamp(2rem, 1.8472rem + 0.7737vw, 2.5rem);
+	--space-xl: clamp(3rem, 2.7708rem + 1.1605vw, 3.75rem);
+	--space-2xl: clamp(4rem, 3.6944rem + 1.5474vw, 5rem);
+	--space-3xl: clamp(6rem, 5.5416rem + 2.3211vw, 7.5rem);
+
+	--space-3xs-2xs: clamp(0.25rem, 0.1354rem + 0.5803vw, 0.625rem);
+	--space-2xs-xs: clamp(0.5rem, 0.3663rem + 0.677vw, 0.9375rem);
+	--space-xs-s: clamp(0.75rem, 0.5972rem + 0.7737vw, 1.25rem);
+	--space-s-m: clamp(1rem, 0.7326rem + 1.354vw, 1.875rem);
+	--space-m-l: clamp(1.5rem, 1.1944rem + 1.5474vw, 2.5rem);
+	--space-l-xl: clamp(2rem, 1.4652rem + 2.7079vw, 3.75rem);
+	--space-xl-2xl: clamp(3rem, 2.3888rem + 3.0948vw, 5rem);
+	--space-2xl-3xl: clamp(4rem, 2.9304rem + 5.4159vw, 7.5rem);
+
+	/* grid */
+	/* @link https://utopia.fyi/grid/calculator?c=316,16,1.125,1110,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,m,xl,12 */
+	--grid-max-inline-size: 84.38rem;
+	--grid-gutter: var(--space-s-m);
+	--grid-columns: 12;
+
+	--content-width: 60ch;
+
+	/* colors */
+
+	/* primary */
+	--green-100: oklch(95% 0.1 175);
+	--green-200: oklch(88% 0.099 174); /* #8eedd2 */
+	--green-300: oklch(80% 0.098 173); /* #75d3b8 */
+	--green-400: oklch(72% 0.097 172);
+	--green-500: oklch(65% 0.096 171);
+	--green-600: oklch(58% 0.095 170);
+	--green-700: oklch(50% 0.094 169); /* #14745a */
+	--green-800: oklch(42% 0.093 168); /* #1f5b45 */
+	--green-900: oklch(35% 0.092 167);
+
+	/* secondary */
+	--yellow-100: oklch(95% 0.15 90);
+	--yellow-200: oklch(88% 0.149 89); /* #f8d36a */
+	--yellow-300: oklch(80% 0.148 88);
+	--yellow-400: oklch(72% 0.147 87);
+	--yellow-500: oklch(65% 0.146 86);
+	--yellow-600: oklch(58% 0.145 85);
+	--yellow-700: oklch(50% 0.144 84);
+	--yellow-800: oklch(42% 0.143 83);
+	--yellow-900: oklch(35% 0.142 82);
+
+	--gray-50: oklch(100% 0 0);
+	--gray-100: oklch(95% 0 0);
+	--gray-200: oklch(88% 0 0);
+	--gray-300: oklch(80% 0 0);
+	--gray-400: oklch(72% 0 0);
+	--gray-500: oklch(65% 0 0);
+	--gray-600: oklch(58% 0 0);
+	--gray-700: oklch(50% 0 0);
+	--gray-800: oklch(42% 0 0);
+	--gray-900: oklch(35% 0 0);
+	--gray-1000: oklch(28% 0 0);
+
+	/* gradients */
+	/* @link https://www.joshwcomeau.com/gradient-generator/?from=newsletter */
+	--gradient-dawn: linear-gradient(
+		180deg,
+		hsl(158deg 49% 24%) 0%,
+		hsl(159deg 49% 28%) 42%,
+		hsl(159deg 50% 33%) 63%,
+		hsl(160deg 50% 37%) 77%,
+		hsl(160deg 50% 42%) 86%,
+		hsl(161deg 51% 46%) 93%,
+		hsl(161deg 51% 51%) 98%,
+		hsl(162deg 51% 55%) 101%,
+		hsl(162deg 51% 60%) 102%,
+		hsl(163deg 52% 64%) 100%
+	);
+
+	--gradient-dusk: linear-gradient(
+		180deg,
+		hsl(163deg 52% 64%) 0%,
+		hsl(162deg 51% 60%) 42%,
+		hsl(162deg 51% 55%) 63%,
+		hsl(161deg 51% 51%) 77%,
+		hsl(161deg 51% 46%) 86%,
+		hsl(160deg 50% 42%) 93%,
+		hsl(160deg 50% 37%) 98%,
+		hsl(159deg 50% 33%) 101%,
+		hsl(159deg 49% 28%) 102%,
+		hsl(158deg 49% 24%) 100%
+	);
+}

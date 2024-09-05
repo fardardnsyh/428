@@ -1,0 +1,24 @@
+---
+import { SITE_TITLE } from '../../consts'
+
+import BaseHead from '../molecules/BaseHead.astro'
+import Header from '../organisms/Header.astro'
+import Footer from '../organisms/Footer.astro'
+
+const { title, description } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`${title} | ${SITE_TITLE}`} description={description} />
+	</head>
+
+	<body>
+		<Header />
+
+		<slot />
+
+		<Footer />
+	</body>
+</html>

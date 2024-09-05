@@ -1,0 +1,47 @@
+---
+import { SITE_TITLE } from '../../consts'
+
+import BaseHead from '../molecules/BaseHead.astro'
+import BlogPostHeader from '../molecules/BlogPostHeader.astro'
+
+import Header from '../organisms/Header.astro'
+import Footer from '../organisms/Footer.astro'
+import Webmentions from '../organisms/Webmentions.astro'
+
+const { title, description, pubDate, updatedDate, hasCode, webmentions } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`${title} | ${SITE_TITLE}`} description={description} hasCode={hasCode} />
+	</head>
+
+	<body>
+		<Header />
+
+		<main>
+			<div class="container">
+				<BlogPostHeader title={title} pubDate={pubDate} updatedDate={updatedDate} />
+			</div>
+
+			<div class="container">
+				<div class="content">
+					<slot />
+				</div>
+			</div>
+
+			{
+				!!webmentions.length && (
+					<div class="container">
+						<div class="content">
+							<Webmentions webmentions={webmentions} />
+						</div>
+					</div>
+				)
+			}
+		</main>
+
+		<Footer />
+	</body>
+</html>
